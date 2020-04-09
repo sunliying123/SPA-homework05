@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在线记事本</title>
+    <link rel="stylesheet" href="./layout.css">
+</head>
+<body>
+    <ul id="menu">
+        <!-- 文件菜单 -->
+        <li id="file">
+            文件(F)
+            <ul id="box1">
+                <li>新建(N)<span style="margin-left: 55px;">Ctrl+N</span></li>
+                <li>打开(O)<span style="margin-left: 55px;">Ctrl+O</span></li>
+                <li>保存(S)<span style="margin-left: 55px;">Ctrl+S</span></li>
+                <li>另存为(A)</li>
+                <hr class="line">
+                <li>页面设置(U)</li>
+                <li>打印(P)<span style="margin-left: 55px;">Ctrl+P</span></li>
+                <hr class="line">
+                <li>退出(X)</li>
+            </ul>
+        </li>
+
+        <!-- 编辑菜单 -->
+        <li>
+            编辑(E)
+            <ul id="box1">
+                <li>撤销(U)<span style="margin-left: 55px;">Ctrl+Z</span></li>
+                <hr class="line">
+                <li>剪切(T)<span style="margin-left: 55px;">Ctrl+X</span></li>
+                <li>复制(C)<span style="margin-left: 55px;">Ctrl+C</span></li>
+                <li>粘贴(P)<span style="margin-left: 55px;">Ctrl+V</span></li>
+                <li>删除(L)<span style="margin-left: 55px;">Del</span></li>
+                <hr class="line">
+                <li>使用Bing搜索<span style="margin-left: 20px;">Ctrl+E</span></li>
+                <li>查找(F)<span style="margin-left: 55px;">Ctrl+F</span></li>
+                <li>查找下一个(N)<span style="margin-left: 20px;">F3</span></li>
+                <li>替换(R)<span style="margin-left: 55px;">Ctrl+H</span></li>
+                <li>转到(G)<span style="margin-left: 55px;">Ctrl+G</span></li>
+                <hr class="line">
+                <li>全选(A)<span style="margin-left: 55px;">Ctrl+A</span></li>
+                <li>时间/日期(D)<span style="margin-left: 24px;">F5</span></li>
+            </ul>
+        </li>
+
+        <!-- 格式菜单 -->
+        <li>
+            格式(O)
+            <ul id="box1">
+                <li>自动换行(W)</li>
+                <li id="font">字体(F)</li>
+            </ul>
+        </li>
+
+        <!-- 查看菜单 -->
+        <li>
+            查看(V)
+            <ul id="box1">
+                <li>状态栏(S)</li>
+            </ul>
+        </li>
+        
+        <!-- 帮助菜单 -->
+        <li>
+            帮助(H)
+            <ul id="box1">
+                <li>查看帮助(H)</li>
+                <li>关于记事本(A)</li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- 字体编辑区 -->
+    <div id="box2">
+        <textarea id="txt"></textarea>
+        <!-- <div id="font-box">
+            <div id="top">
+                <span style="float:left;margin-left:8px;margin-top: 3%;">字体</span>
+                <span id="remove" style="float:right;margin-right:10px;margin-top: 3%;">X</span>
+            </div>
+            <form action="" method="GET">
+                <p style="font-size: 13px;float: left;margin-left: 20px;">字体(F):</p>
+                <select style="float: left;margin-top: 40px;margin-left: -45px;" name="">
+                    <option style="font-family: Agency FB;">Agency FB</option>
+                    <option style="font-family: Algerian;">Algerian</option>
+                    <option style="font-family: Arial;">Arial</option>
+                    <option style="font-family: Arial Rounded MT;">Arial Rounded MT</option>
+                    <option style="font-family: Axure Handwriting;">Axure Handwriting</option>
+                    <option style="font-family: Bahnschrift;">Bahnschrift</option>
+                    <option style="font-family: Baskerville Old Face;">Baskerville Old Face</option>
+                    <option style="font-family: Bauhaus 93;">Bauhaus 93</option>
+                    <option style="font-family: Bell MT;">Bell MT</option>
+                    <option style="font-family: Berlin Sans FB;">Berlin Sans FB</option>
+                    <option style="font-family: Bernard MT;">Bernard MT</option>
+                    <option style="font-family: BlackAdder ITC;">BlackAdder ITC</option>
+                </select>
+
+                <p style="font-size: 13px;float:left;margin-left: 30px;">字形(Y):</p>
+                <select style="float: left;margin-top: 40px;margin-left: -45px;">
+                    <option>常规</option>
+                    <option style="font-style: italic;">斜体</option>
+                    <option style="font-weight: bold;">粗体</option>
+                    <option style="font-weight: bold;font-style: italic;">粗偏斜体</option>
+                </select>
+
+                <p style="font-size: 13px;float:left;margin-left: 30px;">大小(S):</p>
+                <select style="float: left;margin-top: 40px;margin-left: -45px;">
+                    <option>2</option>
+                    <option>4</option>
+                    <option>6</option>
+                    <option>8</option>
+                    <option>10</option>
+                    <option>12</option>
+                    <option>14</option>
+                    <option>16</option>
+                    <option>18</option>
+                    <option>20</option>
+                </select>
+
+                <fieldset style="width: 100px;height: 80px;float: left;margin-left: 20px;margin-top: 30%;">
+                    <legend style="font-size: 12px;">示例</legend>
+                    <p id="example">AaBbYyZz</p>
+                </fieldset>
+
+                <p style="font-size: 13px;float:left;margin-top: 230px;margin-left: -130px;">脚本(R):</p>
+                <select style="float: left;margin-top: 250px;margin-left: -130px;">
+                    <option>西欧语言</option>
+                </select>
+            </form>
+            <input id="sure" type="button" value="确定" />
+            <input id="cancel" type="button" value="取消" />
+        </div> -->
+    </div>
+
+    <script src='http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js'></script>
+    <script src="./main.js"></script>
+</body>
+</html>
